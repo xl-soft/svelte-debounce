@@ -6,7 +6,7 @@
  * <input use:debounce={(v) => console.log('debounced value: ', v)}/>
  * ```
  */
-export function debounce(node: any, callback: <T = any>(value: T) => void, options: { delta: number } = { delta: 100 }) {
+export function debounce(node: any, callback: <T = any>(value: T) => void, options: { delta: number } = { delta: 100 }): { destroy: () => void } {
     let debounced_value = ''
     let debouncing_delta = 0
     let debouncing_timer: any
